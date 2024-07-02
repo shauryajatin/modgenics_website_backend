@@ -7,7 +7,7 @@ const app = express();
 const port = 3000;
 
 // MongoDB connection
-mongoose.connect('mongodb://localhost:27017/contactForm', {
+mongoose.connect('mongodb+srv://shankarjatin1005:nYdr2TsoY4NXfCnm@cluster0.subvhvu.mongodb.net/modgenics', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });

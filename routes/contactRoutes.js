@@ -1,7 +1,7 @@
 const express = require('express');
 const { createContact, getAllContacts } = require('../controllers/contactController');
 const { validateContact } = require('../validators/contactValidator');
-const auth = require('../middleware/auth');
+// const auth = require('../middleware/auth');
 
 const router = express.Router();
 
