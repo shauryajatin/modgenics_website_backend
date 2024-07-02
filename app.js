@@ -2,16 +2,13 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const contactRoutes = require('./routes/contactRoutes');
-
+const connectDb = require("./config/dbConnection");
 const app = express();
 const port = 3000;
-
+const dotenv = require("dotenv").config()
 // MongoDB connection
-mongoose.connect('mongodb+srv://shankarjatin1005:nYdr2TsoY4NXfCnm@cluster0.subvhvu.mongodb.net/modgenics', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-});
 
+connectDb()
 // Middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
