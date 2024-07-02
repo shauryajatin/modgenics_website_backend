@@ -6,6 +6,7 @@ const connectDb = require("./config/dbConnection");
 const app = express();
 const port = 3000;
 const dotenv = require("dotenv").config()
+app.use(express.json());
 // MongoDB connection
 
 connectDb()
