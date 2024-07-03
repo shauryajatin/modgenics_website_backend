@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const contactRoutes = require('./routes/contactRoutes');
+const adminRoutes = require('./routes/adminRoutes');
 const connectDb = require("./config/dbConnection");
 const cors = require('cors');
 const app = express();
@@ -17,7 +18,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // Routes
-app.use('/contact', contactRoutes);
+app.use('/', contactRoutes);
+app.use('/', adminRoutes);
 
 // Start server
 app.listen(port, () => {

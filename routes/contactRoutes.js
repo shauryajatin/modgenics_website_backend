@@ -6,7 +6,7 @@ const { validateContact } = require('../validators/contactValidator');
 const router = express.Router();
 
 // POST route
-router.post('/', validateContact, createContact);
+router.post('/contact', validateContact, createContact);
 
 // GET route (authenticated)
 // router.get('/', auth, getAllContacts);
