@@ -12,14 +12,14 @@ const transporter = nodemailer.createTransport({
 });
 
 exports.createContact = async (req, res) => {
-    const { fullname, email, company, phone, helpText } = req.body;
+    const { fullName, email, company, phoneNumber, description } = req.body;
 
     const contact = new Contact({
-        fullname,
+        fullName,
         email,
         company,
-        phone,
-        helpText,
+        phoneNumber,
+        description,
     });
 
     try {
@@ -27,15 +27,15 @@ exports.createContact = async (req, res) => {
 
         // Send email to admin
         const mailOptions = {
-            from: 'shankarjatin1005@gmail.com', // replace with your email
+            from: 'shankarjatin1005@outlook.com', // replace with your email
             to: adminEmail,
             subject: 'New Contact Form Submission',
             text: `You have a new contact form submission:
-                   Full Name: ${fullname}
+                   Full Name: ${fullName}
                    Email: ${email}
                    Company: ${company}
-                   Phone: ${phone}
-                   Help Text: ${helpText}`,
+                   Phone: ${phoneNumber}
+                   Help Text: ${description}`,
         };
 
         transporter.sendMail(mailOptions, (error, info) => {

@@ -3,11 +3,13 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const contactRoutes = require('./routes/contactRoutes');
 const connectDb = require("./config/dbConnection");
+const cors = require('cors');
 const app = express();
 const port = 3000;
 const dotenv = require("dotenv").config()
 app.use(express.json());
 // MongoDB connection
+app.use(cors());
 
 connectDb()
 // Middleware
