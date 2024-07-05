@@ -1,13 +1,13 @@
 const Contact = require('../models/contact');
 const nodemailer = require('nodemailer');
 
-const adminEmail = 'shankarjatin1005@gmail.com'; // replace with your admin email
+const adminEmail = 'sales@modgenics.co'; // replace with your admin email
 
 const transporter = nodemailer.createTransport({
     service: 'hotmail', // replace with your email provider
     auth: {
         user: 'shankarjatin1005@outlook.com', // replace with your email
-        pass: 'Hanumanji@10',  // replace with your email password
+        pass: process.env.PASSWORD ,  // replace with your email password
     },
 });
 
