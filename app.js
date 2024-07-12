@@ -7,8 +7,10 @@ const connectDb = require("./config/dbConnection");
 const cors = require('cors');
 const app = express();
 const port = process.env.PORT || 8000;
-const dotenv = require("dotenv").config()
+const dotenv = require("dotenv")
+dotenv.config();
 app.use(express.json());
+
 // MongoDB connection
 app.use(cors());
 

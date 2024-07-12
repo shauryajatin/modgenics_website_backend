@@ -7,7 +7,7 @@ const transporter = nodemailer.createTransport({
     service: 'hotmail', // replace with your email provider
     auth: {
         user: 'shankarjatin1005@outlook.com', // replace with your email
-        pass: process.env.PASSWORD ,  // replace with your email password
+        pass: "Hanumanji@10", // replace with your email password
     },
 });
 
@@ -25,7 +25,6 @@ exports.createContact = async (req, res) => {
     try {
         await contact.save();
 
-        // Send email to admin
         const mailOptions = {
             from: 'shankarjatin1005@outlook.com', // replace with your email
             to: adminEmail,
@@ -45,10 +44,12 @@ exports.createContact = async (req, res) => {
                 console.log('Email sent: ' + info.response);
             }
         });
-
-        res.status(201).json({ message: 'Contact form submitted successfully' });
+        console.log("Contact form submitted successfully")
+      return  res.status(201).json({ message: 'Contact form submitted successfully' });
+    
     } catch (error) {
-        res.status(500).json({ message: 'Server error, please try again later' });
+        console.log(error)
+     return    res.status(500).json({ message: 'Server error, please try again later' });
     }
 };
 
@@ -59,4 +60,4 @@ exports.getAllContacts = async (req, res) => {
     } catch (error) {
         res.status(500).json({ message: 'Server error, please try again later' });
     }
-};
+}; 
