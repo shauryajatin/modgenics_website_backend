@@ -6,8 +6,8 @@ const adminEmail = 'sales@modgenics.co'; // replace with your admin email
 const transporter = nodemailer.createTransport({
     service: 'hotmail', // replace with your email provider
     auth: {
-        user: 'shankarjatin1005@outlook.com', // replace with your email
-        pass: "Hanumanji@10", // replace with your email password
+        user: 'sales@modgenics.com', // replace with your email
+        pass: "Modgenics@8340", // replace with your email password
     },
 });
 
